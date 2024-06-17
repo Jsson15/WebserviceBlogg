@@ -40,7 +40,7 @@ public class SecurityConfig {
                 .oauth2ResourceServer(ors -> ors.jwt(jwt -> jwt.jwtAuthenticationConverter(jwtAuthConverter)));
 
         http
-                .csrf(csrf -> csrf.ignoringRequestMatchers("/api/newuser"));
+                .csrf(csrf -> csrf.disable());
 
 
         return http.build();

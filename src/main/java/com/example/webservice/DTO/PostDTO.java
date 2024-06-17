@@ -13,8 +13,7 @@ public class PostDTO {
     private LocalDate dateForPost;
     private UserDTO userDTO;
 
-    public PostDTO() {
-    }
+
 
     public PostDTO(Long id, String postTitle, String postText, LocalDate dateForPost, UserDTO userDTO) {
         this.id = id;

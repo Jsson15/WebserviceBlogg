@@ -32,7 +32,9 @@ public class JwtAuthConverter implements Converter<Jwt, AbstractAuthenticationTo
     }
 
     public AbstractAuthenticationToken convert(@NonNull Jwt jwt) {
-        Collection<GrantedAuthority> authorities = (Collection)Stream.concat(this.jwtGrantedAuthoritiesConverter.convert(jwt).stream(), this.extractResourceRoles(jwt).stream()).collect(Collectors.toSet());
+        Collection<GrantedAuthority> authorities = (Collection)Stream
+                .concat(this.jwtGrantedAuthoritiesConverter.convert(jwt).stream(),
+                        this.extractResourceRoles(jwt).stream()).collect(Collectors.toSet());
         return new JwtAuthenticationToken(jwt, authorities, this.getPrincipleClaimName(jwt));
     }
 

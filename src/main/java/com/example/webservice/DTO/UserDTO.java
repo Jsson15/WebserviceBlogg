@@ -7,8 +7,7 @@ package com.example.webservice.DTO;
 public class UserDTO {
     private String userName;
 
-    public UserDTO() {
-    }
+
 
     public UserDTO(String userName) {
         this.userName = userName;
